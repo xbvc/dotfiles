@@ -1,7 +1,1 @@
-#! /bin/bash
-
-cd
-ln -s .dotfiles/bashrc .bashrc
-ln -s .dotfiles/xinitrc .xinitrc
-ln -s .dotfiles/Xresources .Xresources
-ln -s .dotfiles/i3/.i3 .i3 
+My Dotfiles 
