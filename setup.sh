@@ -4,6 +4,8 @@
 
 while :
 do
+echo "ATTENTION: This script deletes the original dotfiles!"
+echo
 echo "Symlink:"
 echo 
 echo "1. .bashrc"
@@ -16,11 +18,12 @@ echo "7. X"
 echo "8. Exit"
 read opt
 case $opt in
-1) cd && ln -s .dotfiles/bashrc .bashrc;;
-2) cd && ln -s .dotflies/xinitrc .xinitrc;;
-3) cd && ln -s .dotflies/Xresources .Xresources;;
-4) cd && ln -s .dotfiles/i3/.i3 .i3
-5) cd && ln -s .dotfiles/vim/.vim .vim && ln -s .dotfiles/vim/.vimrc .vimrc
+1) cd && rm .bashrc && ln -s .dotfiles/bashrc .bashrc;;
+2) cd && rm .xinitrc && ln -s .dotflies/xinitrc .xinitrc;;
+3) cd && rm .Xresources && ln -s .dotflies/Xresources .Xresources;;
+4) cd && rm -rf .i3 && ln -s .dotfiles/i3/.i3 .i3
+5) cd && rm -rf .vim && rm .vimrc && ln -s .dotfiles/vim/.vim .vim && ln -s 
+.dotfiles/vim/.vimrc .vimrc
 
 8) exit;;
 *) echo "$opt is  Unknown"
