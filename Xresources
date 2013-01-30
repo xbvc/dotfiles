@@ -1,0 +1,92 @@
+!--------------------------------------
+! File:		.Xresources
+! Author:	-
+! Parse:	xrdb ~/.Xresources
+!--------------------------------------
+
+! DeSolarized Theme
+
+#define c_base02	    #1b1b1b
+#define c_base01		  #262626
+#define c_content01		#5e5e5e
+#define c_content02		#919191
+#define c_content03	  #9e9e9e
+#define c_red		      #a34951
+#define c_orange	    #a36e49
+#define c_yellow      #a39b49
+#define c_green	      #49a36e
+#define c_cyan	      #49a39b
+#define c_blue	      #497ea3
+#define c_magenta		  #a3497e
+#define c_violet	    #4951a3
+
+! Missing colors
+
+#define c_darkgreen   #397F56
+#define c_darkyellow  #7F7939
+#define c_darkblue    #39627F
+#define c_darkcyan    #397F79
+
+
+
+!--------------------------------------
+!                urxvt
+!--------------------------------------
+
+! Colors
+
+*background: 	c_base02
+*foreground: 	c_content02	
+*fading:		40
+*fadeColor:		c_base02
+*cursor_color:	c_content01
+
+
+! black dark/light
+*color0:  c_base01
+*color8:  c_base02
+
+! red dark/light
+*color1:  c_red
+*color9:  c_orange
+
+! green dark/light
+*color2:  c_green
+*color10: c_darkgreen
+
+! yellow dark/light
+*color3:  c_yellow
+*color11: c_darkyellow
+
+! blue dark/light
+*color4:  c_blue
+*color12: c_darkblue
+
+! magenta dark/light
+*color5:  c_magenta
+*color13: c_violet
+
+! cyan dark/light
+*color6:  c_cyan
+*color14: c_darkcyan
+
+! white dark/light
+*color7:  c_content01
+*color15: c_content02
+
+
+! Font
+urxvt*font:             xft:Inconsolata:style=Regular:size=9
+urxvt*boldFont:		      xft:Inconsolata:style=Bold:size=9
+
+
+! Settings
+
+URxvt*title:             urxvt
+URxvt*scrollBar:         false
+URxvt*allow_bold:        false
+
+URxvt.perl-ext-common:	default,clipboard,matcher,url-select
+URxvt.url-launcher:     /usr/bin/chromium
+URxvt.matcher.button:   1
+
