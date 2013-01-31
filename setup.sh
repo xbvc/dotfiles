@@ -13,8 +13,8 @@ echo "2: .xinit"
 echo "3: .Xresources"
 echo "4: .i3"
 echo "5: .vim & .vimrc"
-echo "6: X"
-echo "7: X"
+echo "6: .mc"
+echo "7: .mpd & .ncmpcpp"
 echo "8: Exit"
 read opt
 case $opt in
@@ -22,9 +22,9 @@ case $opt in
 2) cd && rm .xinitrc && ln -s .dotflies/xinitrc .xinitrc;;
 3) cd && rm .Xresources && ln -s .dotflies/Xresources .Xresources;;
 4) cd && rm -rf .i3 && ln -s .dotfiles/i3/.i3 .i3;;
-5) cd && rm -rf .vim && rm .vimrc && ln -s .dotfiles/vim/.vim .vim && ln -s 
-.dotfiles/vim/.vimrc .vimrc;;
-
+5) cd && rm -rf .vim && rm .vimrc && ln -s .dotfiles/vim/.vim .vim && ln -s .dotfiles/vim/.vimrc .vimrc;;
+6) cd && rm -rf .config/mc && ln -s .dotfiles/ms .config/mc;;
+7) cd && rm -rf .mpd/ .ncmpcpp/ && ln -s .dotfiles/mpd .mpd && ln -s .dotflies/ncmpcpp .ncmpcpp;;
 8) exit;;
 *) echo "$opt is  Unknown"
 read enterKey;;

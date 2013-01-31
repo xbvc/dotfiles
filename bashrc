@@ -34,9 +34,8 @@ alias fu='sudo pacman -Syu'
 alias music='ncmpcpp'
 
 # ?
-alias dubstep='echo "main(i){for(i=0;;i++)putchar(((i*(i>>3|i>>11)&43&i>>8))^(i&i>>12|i>>4));}" | gcc -x c - && ./a.out | aplay'
-alias dubstep2='echo "main(i){for(i=0;;i++)putchar(((i*(i>>17|i>>9)&46&i>>3))^(i&i>>10|i>>100));}" | gcc -x c - && ./a.out | aplay'
-
+alias dubstep='echo "main(i){for(i=0;;i++)putchar(((i*(i>>17|i>>9)&46&i>>3))^(i&i>>10|i>>100));}" | gcc -x c - && ./a.out | aplay'
+alias dubstep2='echo "main(i){for(i=0;;i++)putchar(((i*(i>>3|i>>11)&43&i>>8))^(i&i>>12|i>>4));}" | gcc -x c - && ./a.out | aplay'
 
 # PROMPT ----------------------------------------------------------------------------
 

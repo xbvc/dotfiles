@@ -1,0 +1,17 @@
+sw_volume: 100
+audio_device_state:1:mpd
+state: play
+current: 2
+time: 110
+random: 0
+repeat: 0
+single: 0
+consume: 1
+crossfade: 0
+mixrampdb: 0.000000
+mixrampdelay: nan
+playlist_begin
+0:A +/A+ - Hempstead High (1999)/01 - Intro (Classroom) (feat. Lawrence Page).mp3
+1:Brothers Keepers/Am I My Brothers Keeper/Will We Ever Know (Eased von Seeed, Gentleman, Patrice, Bantu, D-Flame, Don Abi und Nosliw).mp3
+2:Cali Agents/Cali Agents - Head of the State/03  Cali Nights.mp3
+playlist_end
