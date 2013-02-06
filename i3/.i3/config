@@ -1,21 +1,27 @@
 
-# Clean i3 config file (v4) (Reference: http://i3wm.org/docs/userguide.html)
+# i3 config file (v4) (Reference: http://i3wm.org/docs/userguide.html)
+
+# GENERAL ---------------------------------------------------------------
 
 set $mod Mod4
 
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
 
-# Font for window titles. Will also be used by the bar unless a different font. ISO 10646 = Unicode
+
+# APPEARANCE ------------------------------------------------------------
+
+# Font (ISO 10646 = Unicode=
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 font xft:Inconsolata bold 9
 
-
-# colors       	                border	backgr.	text	indicator
+# Colors
+#       	                border	backgr.	text	indicator
 client.focused                  #000000 #171717 #9e9e9e 
 client.focused_inactive         #171717 #1b1b1b #5e5e5e
 client.unfocused                #171717 #1b1b1b #5e5e5e
 client.urgent                   #cd989a #cd989a #2e3436
 client.background                       #121212
-
 
 # autostart
 exec xrdb ~/.Xresources
@@ -23,28 +29,21 @@ exec --no-startup-id nitrogen --restore
 exec --no-startup-id thunar --daemon
 
 
+# BINDS -----------------------------------------------------------------
+
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
 
-
 # start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run -fn "xft:Inconsolata:bold:pixelsize=9:antialias=true:hinting=slight" -nb "#0f0f0f" -nf "#a6a6a6" -sb "#0f0f0f" -sf "#8f8fed"
-
-# Use Mouse+$mod to drag floating windows to their wanted position
-floating_modifier $mod
-
-# kill focused window
-bindsym $mod+Shift+q kill
 
 # audio
 bindsym XF86AudioRaiseVolume exec amixer sset Master,0 2+
 bindsym XF86AudioLowerVolume exec amixer sset Master,0 2-
 bindsym XF86AudioMute exec amixer sset Master,0 toggle
 
-# There also is the (new) i3-dmenu-desktop which only displays applications
-# shipping a .desktop file. It is a wrapper around dmenu, so you need that
-# installed.
-# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+# kill focused window
+bindsym $mod+Shift+q kill
 
 # change focus
 bindsym $mod+j focus left
@@ -96,24 +95,28 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
+
+# WORKSPACES ------------------------------------------------------------
+
 # workspaces and screens
 workspace "1:main" output DVI-I-2
 workspace "2:term" output DVI-I-3
 workspace "3:webs" output DVI-I-2
-workspace "4:gimp" output DVI-I-2
-workspace "5:mail" output DVI-I-3
+workspace "4:mail" output DVI-I-2
+workspace "5:gimp" output DVI-I-3
 workspace "6:file" output DVI-I-3
-workspace "7:steam" output DVI-I-3
+workspace "7:steam" output DVI-I-2
+workspace "8:misc" output DVI-I-8
 
 # switch to workspace
 bindsym $mod+1 workspace 1:main
 bindsym $mod+2 workspace 2:term
 bindsym $mod+3 workspace 3:webs
-bindsym $mod+4 workspace 4:gimp
-bindsym $mod+5 workspace 5:mail
+bindsym $mod+4 workspace 4:mail
+bindsym $mod+5 workspace 5:gimp
 bindsym $mod+6 workspace 6:file
 bindsym $mod+7 workspace 7:steam
-bindsym $mod+8 workspace 8
+bindsym $mod+8 workspace 8:misc
 bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
 
@@ -121,13 +124,19 @@ bindsym $mod+0 workspace 10
 bindsym $mod+Shift+1 move container to workspace 1:main
 bindsym $mod+Shift+2 move container to workspace 2:term
 bindsym $mod+Shift+3 move container to workspace 3:webs
-bindsym $mod+Shift+4 move container to workspace 4:gimp
-bindsym $mod+Shift+5 move container to workspace 5:mail
+bindsym $mod+Shift+4 move container to workspace 4:mail
+bindsym $mod+Shift+5 move container to workspace 5:gimp
 bindsym $mod+Shift+6 move container to workspace 6:file
 bindsym $mod+Shift+7 move container to workspace 7:steam
-bindsym $mod+Shift+8 move container to workspace 8
+bindsym $mod+Shift+8 move container to workspace 8:misc
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
+
+# special window assingments
+for_window [class="Steam"]              floating enable border none
+for_window [instance="Steam"]           floating enable border none
+for_window [window_role="pop-up"]       floating enable border none
+for_window [window_role="dialog"]       floating enable border none
 
 # reload the configuration file
 bindsym $mod+Shift+c reload

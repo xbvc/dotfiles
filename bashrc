@@ -12,6 +12,10 @@
 complete -cf sudo
 complete -cf man
 
+# VIRTUALENV STUFF -----------------------
+
+alias edXidle="cd ~/.epd_free/bin/ && ./idle"
+
 # ALIASES ---------------------------------------------------------------------------
 
 # Colorfix
